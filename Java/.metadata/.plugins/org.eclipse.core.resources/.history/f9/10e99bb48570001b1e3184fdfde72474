@@ -1,0 +1,6 @@
+
+public class HRThread extends thread{
+	HRThread(LeaveApplication application){
+		
+	}
+}

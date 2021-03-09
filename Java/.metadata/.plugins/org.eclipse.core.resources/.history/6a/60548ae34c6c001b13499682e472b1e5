@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Driver {
+
+	public Driver() {
+		// TODO Auto-generated constructor stub
+	}
+	//static MyException myexception=new MyException();
+
+	public static void main(String[] args)throws MyException {
+		Scanner sc =new Scanner(System.in);
+		int a;
+			a=sc.nextInt();
+		
+	}
+
+}

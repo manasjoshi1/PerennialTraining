@@ -1,0 +1,18 @@
+
+public class SharedClass {
+	public boolean done;
+	SharedClass(boolean done){
+		
+	}
+public static boolean isDone() {
+	return false;
+	
+}
+public  boolean setDone(boolean n) {
+	return false;
+	
+}
+public void notify() {
+	
+}
+}

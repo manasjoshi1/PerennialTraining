@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;SendEmail.java&apos; to &apos;ExpectionHandlingLib/src/(default package)&apos;&#x0D;&#x0A;- Original project: &apos;MailSender&apos;&#x0D;&#x0A;- Destination element: &apos;ExpectionHandlingLib/src/(default package)&apos;&#x0D;&#x0A;- Original element: &apos;SendEmail.java&apos;" description="Copy compilation unit" destination="=ExpectionHandlingLib/src&lt;" element1="/src&lt;{SendEmail.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1613106585094" units="1" version="1.0"/>
+</session>

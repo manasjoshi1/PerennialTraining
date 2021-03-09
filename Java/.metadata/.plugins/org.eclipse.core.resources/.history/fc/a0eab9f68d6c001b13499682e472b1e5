@@ -1,0 +1,9 @@
+import jdk.vm.ci.code.site.ExceptionHandler;
+
+public class Testlib {
+
+public static void main(String[] args) {
+	
+	ExceptionHandle.exceptionHandler()
+}
+}

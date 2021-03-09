@@ -1,0 +1,19 @@
+<Project name="ProjectRoot">
+	<Module name="Module 1">
+	<IOException>
+	
+	<Action name="shutdown"/>
+	
+	</IOException>
+	<SQLException>
+	<Action name="log" logFilePath="E:/Projects/ExpectionHandlingLib/logfile.log"/>
+	<Action name="abort"/>
+	</SQLException>
+	<FileNotFoundException>
+	<Action name="abort"/>
+	</FileNotFoundException>
+	</Module>
+	<Module name="Module 2">
+
+	</Module>
+	</Project>

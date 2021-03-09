@@ -1,0 +1,29 @@
+
+public class Student {
+	String fname;
+	String lname;
+	int rollno;
+	Student(String fname,String lname){
+		fname=this.fname;
+		lname=this.lname;
+	}
+	public String getFname() {
+		return fname;
+	}
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+	public String getLname() {
+		return lname;
+	}
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+	public int getRollno() {
+		return rollno;
+	}
+	public void setRollno(int rollno) {
+		this.rollno = rollno;
+	}
+	
+}

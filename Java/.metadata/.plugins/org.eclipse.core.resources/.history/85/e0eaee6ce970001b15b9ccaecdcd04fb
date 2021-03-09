@@ -1,0 +1,34 @@
+ public class Thread A implements Runnable{
+	 
+ private SharedClass sharedObj;
+public Thread A(SharedClass obj)
+{
+	this.sharedObj = obj:
+}
+@Override
+
+publte void run() { 
+	int i=0 ;
+
+
+while(true) {
+	synchronized (sharedObj) {
+		
+	
+ if(sharedObj.isDone()) {
+
+try {
+
+} catch (InterruptedException e) { TOO Auto-generated catch block e.printStackTrace:
+
+this. sharedObj.setDone(true):
+
+try t
+
+Thread, sleep(1000)
+
+System.out.println("property changed by -Thread.currentThread.getName Now netifying"),
+
+Share by notify: cotch CinterruptedException e) 000 Auto-generated catch block
+
+e.printStackTrace,	

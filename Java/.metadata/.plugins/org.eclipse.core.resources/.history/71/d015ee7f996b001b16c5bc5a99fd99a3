@@ -1,0 +1,10 @@
+import java.util.ArrayList;
+
+public interface BankDAO {
+	boolean openAccount(Account acc);
+	int updateTransaction(Account acc);
+	void closeAccount(int accNo);
+	Account getAccount(int accNo);
+	ArrayList<Transaction> displayTransactions(int accNo,int notxns);
+
+}

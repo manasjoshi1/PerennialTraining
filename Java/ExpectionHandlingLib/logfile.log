@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-02-15T04:14:38.050192500Z</date>
+  <millis>1613362478050</millis>
+  <nanos>192500</nanos>
+  <sequence>0</sequence>
+  <logger>MyLog</logger>
+  <level>INFO</level>
+  <class>LogAction</class>
+  <method>takeAction</method>
+  <thread>1</thread>
+  <message>class java.io.IOException</message>
+</record>
+</log>

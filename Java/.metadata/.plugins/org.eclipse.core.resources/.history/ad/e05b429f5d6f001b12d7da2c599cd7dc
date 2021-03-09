@@ -1,0 +1,20 @@
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.HashSet;
+import java.util.Set;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	Set<Student> s=new HashSet<Student>();
+	s.add(new Student("Manas", "Joshi",1));
+	s.add(new Student("Pepper","Potts",2));
+	s.add(new Student("Harry","Potter",3));
+	s.add(new Student("Tony","Stark",4));
+	for(Student student : s) {
+		System.out.println(student.fname+" "+student.lnamel);
+	}
+	System.out.println(s.size());
+	}
+}

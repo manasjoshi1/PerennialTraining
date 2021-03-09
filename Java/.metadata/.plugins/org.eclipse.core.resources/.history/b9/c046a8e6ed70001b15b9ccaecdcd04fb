@@ -1,0 +1,51 @@
+public class Test2 {
+
+public static void main(String args[]) {
+
+// TODO Auto-generated method stub Thread A t1 = new Thread_A(obj); threadA.setName("Thread -A");
+
+SharedClass obj = new SharedClass();
+
+Runnable Thread_A=()->{
+    int i = 0;
+
+
+    while (true) {
+        synchronized(obj) {
+
+
+            if (obj.isDone()) {
+
+                try {
+                	obj.wait();
+                } catch (InterruptedException e) { // TOO Auto-generated catch block 
+                    e.printStackTrace();
+                }
+            }
+            obj.setDone(true);
+
+                try {
+
+                    Thread.sleep(1000);
+
+                    System.out.println("property changed by" +Thread.currentThread().getName()+" Now notifying");
+
+                    obj.notify();
+                }
+            catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+};
+Thread_A t1= new Thread_A(obj);
+Thread threadA=new Thread(t1);
+Thread_B t2 =new Thread_B(obj);
+Thread threadB = new Thread(t2);
+threadB.setName("Thread -B");
+threadA.setName("Thread -A");
+
+threadB.start(); 
+threadA.start();
+}
+}

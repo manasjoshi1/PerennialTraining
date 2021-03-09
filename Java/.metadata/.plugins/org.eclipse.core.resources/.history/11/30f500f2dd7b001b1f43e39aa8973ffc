@@ -1,0 +1,12 @@
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+
+import com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping;
+public class DatabaseLayer {
+	private static Connection conn=null;
+	private static PreparedStatement ptmt=null;
+	private static ResultSet rset=null;
+
+}

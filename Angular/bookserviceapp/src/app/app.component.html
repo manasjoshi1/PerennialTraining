@@ -1,0 +1,10 @@
+<h3>{{somedata}}</h3>
+<h3>Local Data</h3>
+<ul *ngFor="let b of localbookList">
+  <li>{{b.title}} {{b.author}}</li>
+</ul>
+<hr>
+<hr>
+<ul *ngFor="let b of remotebooklist">
+  <li>{{b.title}} {{b.body}}</li>
+</ul>

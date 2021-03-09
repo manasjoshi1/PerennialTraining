@@ -1,0 +1,10 @@
+
+public class HRThread extends Thread{
+	private LeaveApplication application;
+	HRThread(LeaveApplication application){
+		this.application=application;
+	}
+	public void run() {
+		System.out.println("HR Recieves Application");
+	}
+}

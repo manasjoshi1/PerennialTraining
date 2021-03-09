@@ -1,0 +1,24 @@
+<Project name="ProjectRoot">
+	<Module name="Module 1">
+	<IOException>
+	<Actions> 
+	<Action name="email" pass="radhe@shreyas"  from= "joshimanassunil@gmail.com"  to="gaurij00@gmail.com" subject="Something Went Wrong in Email" message="Please address the error asap"/>
+	<Action name="log" logFilePath="E:/Projects/ExpectionHandlingLib/logfile.log"/>
+	<Action name="abort"/>
+	<Action name="shutdown"/>
+	</Actions>
+	
+	</IOException>
+	<SQLException>
+	<Actions> 
+	<Action name="log" logFilePath="E:/Projects/ExpectionHandlingLib/logfile.log"/>
+	<Action name="abort"/>
+	</Actions>
+	</SQLException>
+	<FileNotFoundException>
+	<Action name="abort"/>
+	</FileNotFoundException>
+	</Module>
+
+	</Module>
+	</Project>

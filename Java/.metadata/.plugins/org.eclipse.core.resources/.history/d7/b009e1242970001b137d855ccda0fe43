@@ -1,0 +1,25 @@
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+public class Tester {
+
+	public static void main(String[] args) {
+		try {
+			throw new IOException();
+		}
+		catch(Exception e) {
+		Map<String,List> map=	ConvertToMap.exceptionHandler("Project1", "Module1", e);
+		  List<String> keys = new ArrayList<String>(map2.keySet());
+
+		    for (String key : keys) {
+		    System.out.println(key + map2.get(key));
+		    }
+			return map2;
+		
+		}
+	}
+
+}

@@ -1,0 +1,12 @@
+import jdk.vm.ci.code.site.ExceptionHandler;
+
+public class Testlib {
+
+public static void main(String[] args) {
+	try {
+		throw new Exception();
+	}
+	catch(Exception e)
+	ExpectionHandle.exceptionHandler("Project Name","Module 1",throw new Exception E);
+}
+}

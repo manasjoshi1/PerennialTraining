@@ -1,0 +1,11 @@
+import java.io.*;
+import javax.xml.*;
+import org.w3c.*;
+public class XMLayer {
+	public static final String xmlFilePath = "E:\\log.xml";
+	public XMLayer() {
+		
+		// TODO Auto-generated constructor stub
+	}
+
+}

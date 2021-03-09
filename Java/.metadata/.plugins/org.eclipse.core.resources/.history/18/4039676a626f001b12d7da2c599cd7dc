@@ -1,0 +1,32 @@
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	Set<Student> set=new TreeSet<Student>();
+	set.add(new Student("Manas", "Joshi",1));
+	set.add(new Student("Pepper","Potts",2));
+	set.add(new Student("Harry","Potter",3));
+	set.add(new Student("Tony","Stark",4));
+	set.add(new Student("Tony","ARk",3));
+	set.add(new Student("Tony","PArk",3));
+	set.add(new Student("Toni","ARk",3));
+	
+	System.out.println(set.size());
+	
+	for(Student student : set) {
+		System.out.println(student.getFname());
+	}
+	
+	for(Student student : set.descendingSet()) {
+		System.out.println(student.getFname());
+	}
+	
+	
+	}
+}

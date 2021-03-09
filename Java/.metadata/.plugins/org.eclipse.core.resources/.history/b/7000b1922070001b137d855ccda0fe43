@@ -1,0 +1,46 @@
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	TreeSet<Student> set=new TreeSet<Student>();
+	TreeSet<Student> stud=new TreeSet<Student>();
+	set.add(new Student("Manas", "Joshi",1));
+	set.add(new Student("Pepper","Potts",2));
+	set.add(new Student("Harry","Potter",3));
+	set.add(new Student("Tony","Stark",3));
+	
+	
+	
+	printSortbyFirst(set);
+	printSortbyLast(set);
+	}
+	public static void printSortbyFirst(TreeSet<Student> set) {
+		System.out.println("Sorting by first name");
+		for(Student student : set) {
+			System.out.println(student.getFname() +" "+ student.getLname());
+		}
+		
+	}
+		public static void printSortbyLast(TreeSet<Student> students) {
+			
+			Set com =new TreeSet(s1, s2)->{
+				return s1.getLname().compareTo(s2.getLname());};
+			
+		TreeSet<Student> s2=new TreeSet<Student>(com);
+		s2.addAll(students);
+		
+		System.out.println("Sorting by last name");
+		for(Student s:s2) {
+			System.out.println(s.getFname()+" "+s.getLname());
+		
+		}
+
+}
+		}

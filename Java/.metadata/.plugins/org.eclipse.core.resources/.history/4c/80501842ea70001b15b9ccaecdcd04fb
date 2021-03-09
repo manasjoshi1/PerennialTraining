@@ -1,0 +1,15 @@
+
+public class SharedClass {
+public static boolean isDone() {
+	return false;
+	
+}
+public static boolean setDone() {
+	return false;
+	
+}
+public void notify() {
+	return false;
+	
+}
+}

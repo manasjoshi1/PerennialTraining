@@ -1,0 +1,15 @@
+
+public class Address implements Comparable<Address>{
+String city;
+int pin;
+public Address(String city,int pin) {
+this.city=city;
+this.pin=pin;
+}
+@Override
+public int compareTo(Address o) {
+	// TODO Auto-generated method stub
+	return 0;
+}
+
+}

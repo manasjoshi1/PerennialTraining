@@ -1,0 +1,18 @@
+
+public class LeaveApplication {
+	private String fname;
+	private String lname;
+	private int noofDays;
+	private boolean hrApprovalStatus;
+	private boolean mgrApprovalStatus;
+	
+	public LeaveApplication() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,7 @@
+
+public class AccountsMgrThread {
+	private LeaveApplication application;
+	private Thread[] dependantThreads= new Thread[2];
+	public AccountMgrThread(LeaveApplication)
+
+}

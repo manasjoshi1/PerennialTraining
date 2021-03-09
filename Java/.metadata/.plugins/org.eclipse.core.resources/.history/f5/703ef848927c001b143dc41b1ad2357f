@@ -1,0 +1,91 @@
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Properties;
+
+import com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping;
+public class DataBaseLayer {
+	private static Connection conn=null;
+	private static PreparedStatement ptmt=null;
+	private static ResultSet rset=null;
+	static DatabaseMetaData dbm ;
+	static Properties createTableValues = new Properties();
+	static{
+		try {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/fileDB", "root", "mysqlpass");
+		conn.setAutoCommit(false);
+		dbm = conn.getMetaData();
+
+		try {
+			createTableValues.load(new FileReader("ValidFiles.props"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		
+	}
+		for(Object s:createTableValues.keySet()) {
+			if(s.toString().contains("data")){
+				
+				String createTable="CREATE TABLE "+ s.toString()+" "+createTableValues.getProperty((String) s);
+				System.out.println(createTable);
+				Statement stmt=conn.createStatement();
+				stmt.execute(createTable);
+				System.out.println("Table Created");
+			}
+			else {
+				System.out.println("Sometning went wrong");
+			}
+			
+		}
+		
+	} catch (ClassNotFoundException e) {
+		e.printStackTrace();
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	
+
+		}
+	private static void createTable() throws SQLException {
+		
+		
+
+		
+		
+	}
+	private static String getFileNameWithoutExtension(String name) {
+        String fileName = "";
+ 
+        try {
+                fileName = name.replaceFirst("[.][^.]+$", "");
+        } catch (Exception e) {
+            e.printStackTrace();
+            fileName = "";
+        }
+ 
+        return fileName;
+ 
+    }
+	private void enterData() {
+		
+	}
+	public static void writetoValidDB(String line, String fileName) throws SQLException {
+		String fileNameWithOutExt = getFileNameWithoutExtension(fileName);
+
+		ResultSet tables = dbm.getTables(null, null, fileNameWithOutExt+"valid", null);
+		if(tables.next()) {
+			
+		}
+		else {
+			System.out.println(fileNameWithOutExt);
+			createTable();
+			//createTable(fileNameWithOutExt+"valid");
+		}
+
+				
+	}
+
+}

@@ -1,0 +1,8 @@
+
+public class Student {
+	String fname;
+	String lname;
+	Student(){
+		fname=this.fname
+	}
+}

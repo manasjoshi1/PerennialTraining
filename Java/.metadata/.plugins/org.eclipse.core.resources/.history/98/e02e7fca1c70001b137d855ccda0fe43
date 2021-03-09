@@ -1,0 +1,56 @@
+import java.lang.Comparable;
+import java.util.Comparator;
+
+public class Student implements Comparable,Comparator {
+	String fname;
+	String lname;
+	int rollno;
+	Student(String fname,String lname, int rollno){
+		this.fname=fname;
+		this.lname=lname;
+		this.rollno=rollno;
+	}
+	public String getFname() {
+		return fname;
+	}
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+	public String getLname() {
+		return lname;
+	}
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+	public int getRollno() {
+		return rollno;
+	}
+	public void setRollno(int rollno) {
+		this.rollno = rollno;
+	}
+	public int hashCode() {
+		System.out.println("Hashcode Called");
+		return 0;
+		
+	}
+	@Override
+	public int compareTo(Object o) {
+		Student s =(Student)o;
+		int a=this.getFname().compareTo(s.getFname());
+		
+		System.out.println(a);
+		return a;
+		
+		
+	}
+	@Override
+	public int compare(Object o1, Object o2) {
+		// TODO Auto-generated method stub
+		Student s =(Student)o1;
+		Student s2 =(Student)o2;
+		return s.getLname().compareTo(s2.getLname());
+	}
+
+
+
+}

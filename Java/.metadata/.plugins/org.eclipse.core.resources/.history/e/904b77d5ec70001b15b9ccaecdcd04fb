@@ -1,0 +1,17 @@
+public class Test2 {
+
+public static void main(String args) {
+
+// TODO Auto-generated method stub Thread A t1 = new Thread_A(obj); threadA.setName("Thread -A");
+
+SharedClass obj = new SharedClass();
+
+Thread_A t1= new Thread_A(obj);
+Thread threadA=new Thread(t1)
+Thread_B t2 =new Thread_B(obj); Thread threadB = new Thread(t2);
+thread.setName("Thread -B");
+
+threadB.start(); 
+threadA.start();
+}
+}

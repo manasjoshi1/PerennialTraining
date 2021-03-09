@@ -1,0 +1,40 @@
+
+public class Student {
+	String fname;
+	String lname;
+	int rollno;
+	Student(String fname,String lname, int rollno){
+		this.fname=fname;
+		this.lname=lname;
+		this.rollno=rollno;
+	}
+	public String getFname() {
+		System.out.println(fname);
+		return fname;
+	}
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+	public String getLname() {
+		return lname;
+	}
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+	public int getRollno() {
+		return rollno;
+	}
+	public void setRollno(int rollno) {
+		this.rollno = rollno;
+	}
+	public int hashCode() {
+		System.out.println("Hashcode Called");
+		return 0;
+		
+	}
+	public int compareTo(Student s) {
+		int a=this.getFname().compareTo(s.getFname());
+		return 0;
+		
+	}
+}

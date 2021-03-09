@@ -1,0 +1,10 @@
+import java.nio.file.*;
+
+
+public class Watchserv {
+
+	WatchService watchService = FileSystems.getDefault().newWatchService();
+	Path path = Paths.get("A:\\Perrenial\\Angular");
+	WatchKey watchKey = path.register( watchService, StandardWatchEventKinds);
+
+}

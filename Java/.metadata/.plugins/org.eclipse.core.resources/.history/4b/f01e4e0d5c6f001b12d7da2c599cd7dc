@@ -1,0 +1,9 @@
+
+public class Student {
+	String fname;
+	String lname;
+	Student(String fname,String lname){
+		fname=this.fname;
+		lname=this.lname;
+	}
+}

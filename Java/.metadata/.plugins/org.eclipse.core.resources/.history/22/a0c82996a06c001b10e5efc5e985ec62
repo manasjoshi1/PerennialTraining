@@ -1,0 +1,13 @@
+import java.sql.SQLException;
+
+public class Testlib {
+
+public static void main(String[] args) {
+	try {
+		throw new SQLException();
+	}
+	catch(Exception e) 
+	{
+	ExpectionHandle.exceptionHandler("Project Name","Module 1",e);}
+}
+}

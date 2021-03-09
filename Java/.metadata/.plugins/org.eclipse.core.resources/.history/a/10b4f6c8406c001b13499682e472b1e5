@@ -1,0 +1,18 @@
+import java.sql.SQLException;
+
+public class MyException extends Exception {
+	
+	MyException(InvalidAccountException e){
+		InvalidAccountException(){
+			System.out.println("Account Not Found");
+	}
+	MyException(SQLException e){
+		
+	}MyException(InsufficientBalanceException e){
+		
+	}
+
+	
+
+	
+}

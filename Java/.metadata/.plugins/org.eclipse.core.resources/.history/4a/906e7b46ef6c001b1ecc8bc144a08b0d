@@ -1,0 +1,37 @@
+<Project name="ProjectRoot">
+	<Module name="Module 1">
+	<java.io.IOException>
+	<Actions> 
+	<Action name="email" to= "a@b.com" from="x@y.com" subject="Something Went Wrong in Email"/>
+	<Action name="log" logFilePath="/Something Went Wrong"/>
+	<Action name="abort"/>
+	<Action name="shutdown"/>
+	</Actions>
+	
+	</java.io.IOException>
+	<java.sql.SQLException>
+	<Actions> 
+	<Action name="log" logFilePath="/Something Went Wrong"/>
+	<Action name="abort"/>
+	</Actions>
+	</java.sql.SQLException>
+	<FileNotFoundException>
+	<Action name="abort"/>
+	</FileNotFoundException>
+	</Module>
+	<Module name="Module 2">
+	<IOException>
+	<Actions> 
+	<Action name="email" to= "a@b.com" from="x@y.com" subject="Something Went Wrong"/>
+	<Action name="log" logFilePath="/Something Went Wrong"/>
+	<Action name="abort"/>
+	<Action name="shutdown"/>
+	</Actions>
+	
+	</IOException>
+	<SQLException>
+	<Action name="log" logFilePath="/Something Went Wrong"/>
+	<Action name="abort"/>
+	</SQLException>
+	</Module>
+	</Project>

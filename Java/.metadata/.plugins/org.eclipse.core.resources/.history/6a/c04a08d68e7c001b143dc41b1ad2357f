@@ -1,0 +1,4 @@
+hdfc.csv= 13:59:20
+dataBasehdfc=accountFirstName,accountLastName,accountNumber,accountBalance
+icici.csv= 13:00:00
+dataBaseicici=accountFirstName,accountLastName,accountNumber

@@ -1,0 +1,13 @@
+
+public class SharedClass {
+	public boolean done;
+
+public static boolean isDone() {
+	return this.done;
+	
+}
+public  void setDone(boolean done) {
+	this.done=done;
+}
+
+}

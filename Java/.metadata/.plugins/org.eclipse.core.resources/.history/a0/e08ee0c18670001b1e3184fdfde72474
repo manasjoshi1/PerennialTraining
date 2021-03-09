@@ -1,0 +1,9 @@
+
+public class AccountsMgrThread extends Thread{
+	private LeaveApplication application;
+	private Thread[] dependantThreads= new Thread[2];
+	public AccountsMgrThread(LeaveApplication app,Thread[] threads) {
+		
+	}
+
+}

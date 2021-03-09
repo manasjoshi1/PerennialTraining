@@ -1,0 +1,10 @@
+
+public class Student {
+	String fname;
+	String lname;
+	int rollno;
+	Student(String fname,String lname){
+		fname=this.fname;
+		lname=this.lname;
+	}
+}

@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Driver {
+
+	public Driver() {
+		// TODO Auto-generated constructor stub
+	}
+	static MyException myexception=new MyException();
+
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		int a;
+			try {
+			a=sc.nextInt();
+			}
+			catch(Exception e) {
+				myexception.insufficentBalance(e);
+			}
+			
+	}
+
+}

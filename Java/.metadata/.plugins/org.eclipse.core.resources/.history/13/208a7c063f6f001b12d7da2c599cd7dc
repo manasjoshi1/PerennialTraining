@@ -1,0 +1,138 @@
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.logging.FileHandler;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+
+public class ExpectionHandle{
+	
+	public static void exceptionHandler(String projectName,String moduleName,Exception exp) {
+	try {
+		
+		Map<String, String> map = new HashMap<>();
+
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();		
+		DocumentBuilder builder= factory.newDocumentBuilder();
+		Document doc = builder.parse("E:/Projects/ExpectionHandlingLib/src/config.xml");
+		Element rootElement=doc.getDocumentElement();
+		NodeList moduleNodes=rootElement.getChildNodes();
+		
+		for(int i=0;i<moduleNodes.getLength();i++) {
+			Node moduleNode= moduleNodes.item(i);
+			if(moduleNode.getNodeType()==Node.ELEMENT_NODE) {
+				
+				NodeList exceptionNodes=moduleNode.getChildNodes();//module children
+				for(int j=0;j<exceptionNodes.getLength();j++) {
+	
+					Node exceptionNode=exceptionNodes.item(j);//exception recd
+					if(exceptionNode.getNodeType()==Node.ELEMENT_NODE) {
+						
+						String exceptionName=((Element)exceptionNode).getNodeName();
+						if(exceptionName.equalsIgnoreCase(exp.getClass().getSimpleName())) {
+							
+							NodeList actionNodes=exceptionNode.getChildNodes();
+							for(int k=0;k<actionNodes.getLength();k++) {	
+								Node actionNode=actionNodes.item(k);
+								if(actionNode.getNodeType()==Node.ELEMENT_NODE) {
+									String actionName=	((Element)actionNode).getAttribute("name");
+
+									
+											
+											NamedNodeMap actionNodeListmap = ((Element)actionNode).getAttributes();
+											for (int m = 0; m < actionNodeListmap.getLength(); ++m)
+											 {
+												 Node attr = actionNodeListmap.item(m);
+												 map.put("exception", exp.toString());
+												 map.put(attr.getNodeName(),attr.getNodeValue());
+											 }	
+											 if(((Element)actionNode).getAttribute("name").equalsIgnoreCase("email")) {
+												 
+												 EmailAction a=new EmailAction();
+												 a.takeAction(map);
+											 }
+											 if(((Element)actionNode).getAttribute("name").equalsIgnoreCase("log")) {
+											
+												 LogAction a=new LogAction();
+												 a.takeAction(map);
+											 }
+											 if(((Element)actionNode).getAttribute("name").equalsIgnoreCase("abort")) {
+											
+												 AbortAction a=new AbortAction();
+												 a.takeAction(map);
+											 }
+											
+										
+										}
+							}
+										
+								
+							}
+						}
+					}
+				}
+			}
+		
+	}
+	catch(Throwable t) {
+		t.printStackTrace();
+	}
+		
+	}
+}
+
+ interface Action{
+	 void takeAction(Map<String,String> map);
+}
+ class EmailAction implements Action{
+ 
+public void takeAction(Map<String, String> map) {
+	// TODO Auto-generated method stub
+	
+	SendEmail.send(map);
+ }}
+ class LogAction implements Action{
+	 @Override
+	 public void takeAction(Map<String, String> map) {
+
+		 Logger logger = Logger.getLogger("MyLog");  
+		 FileHandler fh;
+		try {
+			String fp=map.get("logFilePath");
+			fh = new FileHandler(fp);
+			logger.addHandler(fh);
+
+	        logger.log(Level.INFO,map.get("exception"));;
+		} catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}  
+		 
+	 }
+ }
+ class AbortAction implements Action{
+	 
+	 @Override
+	 public void takeAction(Map<String, String> nvPair) {
+		 // TODO Auto-generated method stub
+		 
+		 System.out.println("Shutting...");
+		 
+	 }
+ }
+ 

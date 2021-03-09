@@ -1,0 +1,6 @@
+
+public class SharedClass {
+public static boolean isDone() {
+	
+}
+}

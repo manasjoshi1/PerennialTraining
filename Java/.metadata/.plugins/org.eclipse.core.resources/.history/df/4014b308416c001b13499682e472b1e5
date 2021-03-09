@@ -1,0 +1,11 @@
+
+public interface Bank {
+	int MIN_BALANCE = 1000;
+	String openAccount(String name,String address,int amount) throws MyException;
+	int withdraw(int accno, int amount) throws MyException;
+	int deposit(int accno, int amount) throws MyException;
+	int transfer(int accfrom, int accto, int amount) throws MyException;
+	int closeAccount(int accno) throws MyException;
+	String printRecentTransaction(int accno, int notxns) throws MyException;
+
+}
