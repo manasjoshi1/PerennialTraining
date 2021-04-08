@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="magician" class="com.rits.Magician" >
+	     <property name="magicwords" value="Choo Mantar !!"></property>
+	     <lookup-method name="getBox" bean="elephantbox" ></lookup-method> 
+	       <lookup-method name="getBox2" bean="elephantbox" ></lookup-method>
+	</bean>
+    <bean id="magician2" parent="magician">
+       <lookup-method name="getBox" bean="beauty" />
+    </bean>
+    <bean id="elephantbox" class="com.rits.ElephantBox" />
+    <bean id="beauty" class="com.rits.BeautifulAssistantBox" />
+
+</beans>
+

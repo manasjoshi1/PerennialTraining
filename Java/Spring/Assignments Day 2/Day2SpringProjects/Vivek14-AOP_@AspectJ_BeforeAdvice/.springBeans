@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[2.3.3.201005160334-M1]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>src/application-list.config.xml</config>
+		<config>src/bank/server/internal/aspects/aspects-config.xml</config>
+	</configs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

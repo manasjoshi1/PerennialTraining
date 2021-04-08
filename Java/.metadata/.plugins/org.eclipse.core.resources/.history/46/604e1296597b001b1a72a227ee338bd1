@@ -1,6 +1,0 @@
-
-public interface MyConstants {
-	public static final String INPUTDIR="/Users/vivekkulkarni/input";
-	public static final String INPROCESS_DIR = "/Users/vivekkulkarni/inprocess";
-
-}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="magician" class="com.rits.Magician" >
+	    <property name="box" ref="magicbox"></property>
+	    <property name="magicwords" value="Choo Mantar !!"></property>
+	    <replaced-method  name="perform" replacer="performReplacer">
+	       <arg-type >com.rits.MagicBox</arg-type>
+	       <arg-type >String</arg-type>
+	    </replaced-method>
+	</bean>
+    <bean id="magicbox" class="com.rits.MagicBoxImpl" >
+       <replaced-method name="showContents" replacer="elephantReplacer" >
+           <arg-type>String</arg-type>
+       </replaced-method>
+      
+            
+        
+    </bean>
+    <bean id="elephantReplacer" class="com.rits.ElephantReplacer" />
+    <bean id="performReplacer" class="com.rits.PerformMethodReplacer" ></bean>
+
+</beans>
+

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+  
+<hibernate-mapping>  
+<class name="Vehicle" table="allvehicles" discriminator-value="plainVehicle">  
+<id name="vehicleId">  
+<generator class="identity"></generator>  
+</id>  
+		<discriminator column="type" type="string"></discriminator>
+<property name="vehicleName"></property>
+
+
+<subclass name ="TwoWheeler" discriminator-value ="tw">
+	<property name="twoWheelerModel"/>
+</subclass>
+
+<subclass name ="FourWheeler" discriminator-value ="fw">
+<property name="fourWheelerModel"/>
+</subclass>
+</class>	
+</hibernate-mapping>

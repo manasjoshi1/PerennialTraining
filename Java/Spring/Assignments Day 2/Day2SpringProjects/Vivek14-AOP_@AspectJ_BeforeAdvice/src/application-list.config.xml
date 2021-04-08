@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd
+	                    http://www.springframework.org/schema/context
+	                    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	                    http://www.springframework.org/schema/util
+                        http://www.springframework.org/schema/util/spring-util-3.0.xsd" >
+	<!-- <import resource="test-infrastructure-config.xml"/> -->
+	<import resource="classpath:/bank/server/internal/aspects/aspects-config.xml" />
+
+
+ <context:annotation-config /> 
+ 
+
+
+
+
+<util:properties id="accountInfo" location="accountInfo.properties"/>
+<bean class="bank.server.internal.Account" />
+<bean class="bank.server.internal.AccountInfo" />
+
+<bean id="saving" class="bank.server.internal.SavingsType">
+	<property name="balance" value="11111" />
+	<property name="custName" value="krishna" />
+	<property name="interestRate" value="10.5"/>
+</bean>
+
+
+<bean id="loan" class="bank.server.internal.LoanAccount" >
+   <constructor-arg name="loanType" value="HomeLoan" />
+   <constructor-arg  name="loanTerm" value="25" />
+   <property name="rateOfInterest" value="10.7" />
+</bean>
+<bean id="subClassAccount" class="bank.server.internal.SubClassAccount" >
+   <constructor-arg name="loanType" value="HomeLoanSubClass" />
+   <constructor-arg  name="loanTerm" value="15" />
+   <property name="rateOfInterest" value="11.7" />
+</bean>
+</beans>

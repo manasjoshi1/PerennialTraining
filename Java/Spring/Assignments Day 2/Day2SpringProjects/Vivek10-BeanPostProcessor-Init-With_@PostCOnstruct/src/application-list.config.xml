@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd
+	                    http://www.springframework.org/schema/context
+	                    http://www.springframework.org/schema/context/spring-context-3.0.xsd" >
+	<import resource="test-infrastructure-config.xml"/>
+<bean id="bankService" class="bank.server.internal.BankImpl" scope="prototype">
+    <constructor-arg >
+       <bean class="bank.server.internal.AccountRepositoryImpl" >
+          <constructor-arg name="dataSource" ref="dataSource" />
+       </bean>
+    </constructor-arg>
+    <constructor-arg>
+       <list>
+          <ref bean="current" />
+          <ref bean="saving" />
+          <ref bean="loan" />
+       </list>
+    </constructor-arg>
+    
+     
+</bean>
+<!--  <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" /> -->
+<!--  OR use just context:annotation-config -->
+ <context:annotation-config /> 
+
+
+<bean id="current" class="bank.server.internal.CurentAccount" init-method="initialize">
+   <constructor-arg name="custName" value="Vivek Kulkarni" />
+   <constructor-arg  name="balance" value="10000000" />
+   <property name="acctNo" value ="12345" />
+</bean>
+<bean id="saving" class="bank.server.internal.SavingsType" >
+   <constructor-arg name="custName" value="Vivek Kulkarni" />
+   <constructor-arg  name="interestRate" value="3.5" />
+</bean>
+<bean id="loan" class="bank.server.internal.LoanAccount" >
+   <constructor-arg name="loanType" value="HomeLoan" />
+   <constructor-arg  name="loanTerm" value="25" />
+   <property name="rateOfInterest" value="10.7" />
+</bean>
+
+  
+
+
+</beans>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<import resource="test-infrastructure-config.xml"/>
+<bean id="bankService" class="bank.server.internal.BankImpl" scope="singleton">
+    <property name="accountRepo" >
+       <bean class="bank.server.internal.AccountRepositoryImpl" >
+          <constructor-arg name="dataSource" ref="dataSource" />
+       </bean>
+    </property>
+   
+     
+</bean>
+
+
+<bean id="current" class="bank.server.internal.CurentAccount" >
+   <constructor-arg name="custName" value="Vivek Kulkarni" />
+   <constructor-arg  name="balance" value="10000000" />
+   <property name="acctNo" value ="12345" />
+</bean>
+<bean id="saving" class="bank.server.internal.SavingsType" >
+   <constructor-arg name="custName" value="Vivek Kulkarni" />
+   <constructor-arg  name="interestRate" value="3.5" />
+</bean>
+<bean id="loan" class="bank.server.internal.LoanAccount" >
+   <constructor-arg name="loanType" value="HomeLoan" />
+   <constructor-arg  name="loanTerm" value="25" />
+   <property name="rateOfInterest" value="10.7" />
+</bean>
+
+  
+
+
+</beans>

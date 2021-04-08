@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.training</groupId>
+	<artifactId>MyApp</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>HelloHibernate</name>
+
+
+
+
+	<dependencies>
+	<dependency>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate-core</artifactId>
+	<version>5.3.1.Final</version>
+	</dependency>
+		<dependency>
+	<groupId>mysql</groupId>
+	<artifactId>mysql-connector-java</artifactId>
+	<version>8.0.11</version>
+	</dependency>	
+	<dependency>
+	<groupId>jakarta.xml.bind</groupId>
+	<artifactId>jakarta.xml.bind-api</artifactId>
+	<version>2.3.2</version>
+	</dependency>
+	<dependency>
+	<groupId>org.glassfish.jaxb</groupId>
+	<artifactId>jaxb-runtime</artifactId>
+	<version>2.3.2</version>
+	</dependency>
+	</dependencies>
+	
+
+</project>

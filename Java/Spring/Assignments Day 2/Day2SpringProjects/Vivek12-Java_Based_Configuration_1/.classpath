@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SPRINGLIB"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SPRING_LIB"/>
+	<classpathentry kind="lib" path="C:/oraclexe/app/oracle/product/10.2.0/server/jdbc/lib/ojdbc14.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
